@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 function QuizScreen({ questions, onFinishQuiz }) {
+  const [selectedAnswer, setSelectedAnswer] = useState("");
+
   const currentQuestion = questions[0];
 
   if (!currentQuestion) {
@@ -14,6 +18,10 @@ function QuizScreen({ questions, onFinishQuiz }) {
     );
   }
 
+  function handleAnswerClick(answer) {
+    setSelectedAnswer(answer);
+  }
+
   return (
     <section className="quiz-screen">
       <p>
@@ -27,7 +35,12 @@ function QuizScreen({ questions, onFinishQuiz }) {
           <button
             key={answer}
             type="button"
-            className="answer-button"
+            className={
+              selectedAnswer === answer
+                ? "answer-button selected-answer"
+                : "answer-button"
+            }
+            onClick={() => handleAnswerClick(answer)}
           >
             {answer}
           </button>

@@ -98,3 +98,8 @@ h1 {
 .answer-button:hover {
   background: #f0f0f0;
 }
+
+.selected-answer {
+  border: 2px solid #222;
+  font-weight: bold;
+}

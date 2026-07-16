@@ -37,7 +37,7 @@ Each task should be completed, tested and committed separately.
 - [x] TASK-12 — Filter questions by category and difficulty
 - [x] TASK-13 — Shuffle the selected quiz questions
 - [x] TASK-14 — Display the current question and answers
-- [ ] TASK-15 — Add answer selection logic
+- [x] TASK-15 — Add answer selection logic
 - [ ] TASK-16 — Show correct and incorrect answer feedback
 - [ ] TASK-17 — Add next-question functionality
 - [ ] TASK-18 — Add quiz progress display
