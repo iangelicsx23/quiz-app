@@ -10,7 +10,7 @@ Each task should be completed, tested and committed separately.
 
 - [x] TASK-01 — Create the Product Requirements Document
 - [x] TASK-02 — Create the development task plan
-- [ ] TASK-03 — Initialize the React project with Vite
+- [x] TASK-03 — Initialize the React project with Vite
 - [ ] TASK-04 — Clean the default Vite project files
 
 ---
