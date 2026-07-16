@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-function QuizScreen({ questions, onFinishQuiz }) {
+function QuizScreen({
+  questions,
+  score,
+  onCorrectAnswer,
+  onFinishQuiz,
+}) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
 
@@ -25,6 +30,10 @@ function QuizScreen({ questions, onFinishQuiz }) {
     }
 
     setSelectedAnswer(answer);
+
+    if (answer === currentQuestion.correctAnswer) {
+      onCorrectAnswer();
+    }
   }
 
   function handleNextQuestion() {
@@ -36,7 +45,10 @@ function QuizScreen({ questions, onFinishQuiz }) {
       return;
     }
 
-    setCurrentQuestionIndex((previousIndex) => previousIndex + 1);
+    setCurrentQuestionIndex(
+      (previousIndex) => previousIndex + 1
+    );
+
     setSelectedAnswer("");
   }
 
@@ -60,31 +72,32 @@ function QuizScreen({ questions, onFinishQuiz }) {
     selectedAnswer === currentQuestion.correctAnswer;
 
   const isLastQuestion =
-  currentQuestionIndex === questions.length - 1;
+    currentQuestionIndex === questions.length - 1;
 
   const progressPercentage =
-  ((currentQuestionIndex + 1) / questions.length) * 100;
+    ((currentQuestionIndex + 1) / questions.length) * 100;
 
-return (
-  <section className="quiz-screen">
-    <div className="quiz-progress">
-      <div className="progress-text">
-        <span>
-          Question {currentQuestionIndex + 1} of {questions.length}
-        </span>
+  return (
+    <section className="quiz-screen">
+      <div className="quiz-progress">
+        <div className="progress-text">
+          <span>
+            Question {currentQuestionIndex + 1} of{" "}
+            {questions.length}
+          </span>
 
-        <span>{Math.round(progressPercentage)}%</span>
+          <span>{Math.round(progressPercentage)}%</span>
+        </div>
+
+        <div className="progress-bar">
+          <div
+            className="progress-fill"
+            style={{ width: `${progressPercentage}%` }}
+          />
+        </div>
       </div>
 
-      <div className="progress-bar">
-        <div
-          className="progress-fill"
-          style={{ width: `${progressPercentage}%` }}
-        />
-      </div>
-    </div>
-
-    <h2>{currentQuestion.question}</h2>
+      <h2>{currentQuestion.question}</h2>
 
       <div className="answer-list">
         {currentQuestion.answers.map((answer) => (
@@ -108,8 +121,13 @@ return (
               : `Incorrect. The correct answer is ${currentQuestion.correctAnswer}.`}
           </p>
 
-          <button type="button" onClick={handleNextQuestion}>
-            {isLastQuestion ? "View Results" : "Next Question"}
+          <button
+            type="button"
+            onClick={handleNextQuestion}
+          >
+            {isLastQuestion
+              ? "View Results"
+              : "Next Question"}
           </button>
         </>
       )}

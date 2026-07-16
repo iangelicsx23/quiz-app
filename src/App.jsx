@@ -28,6 +28,7 @@ function shuffleArray(items) {
 function App() {
   const [currentScreen, setCurrentScreen] = useState("home");
   const [quizQuestions, setQuizQuestions] = useState([]);
+  const [score, setScore] = useState(0);
 
   function startQuiz(category, difficulty) {
     const filteredQuestions = questions.filter((question) => {
@@ -40,6 +41,7 @@ function App() {
     const shuffledQuestions = shuffleArray(filteredQuestions);
 
     setQuizQuestions(shuffledQuestions);
+    setScore(0);
     setCurrentScreen("quiz");
   }
 
@@ -48,6 +50,10 @@ function App() {
       return (
         <QuizScreen
           questions={quizQuestions}
+          score={score}
+          onCorrectAnswer={() =>
+            setScore((previousScore) => previousScore + 1)
+          }
           onFinishQuiz={() => setCurrentScreen("results")}
         />
       );
@@ -56,6 +62,8 @@ function App() {
     if (currentScreen === "results") {
       return (
         <ResultsScreen
+          score={score}
+          totalQuestions={quizQuestions.length}
           onPlayAgain={() => setCurrentScreen("home")}
         />
       );
