@@ -3,6 +3,7 @@ import { useState } from "react";
 function HomeScreen({ onStartQuiz }) {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedDifficulty, setSelectedDifficulty] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   return (
     <section className="home-screen">
@@ -16,6 +17,13 @@ function HomeScreen({ onStartQuiz }) {
         className="quiz-settings"
         onSubmit={(event) => {
           event.preventDefault();
+
+          if (!selectedCategory || !selectedDifficulty) {
+            setErrorMessage("Please select both a category and difficulty");
+            return;
+          }
+
+          setErrorMessage("");
           onStartQuiz();
         }}
       >
@@ -60,6 +68,12 @@ function HomeScreen({ onStartQuiz }) {
             <option value="Hard">Hard</option>
           </select>
         </div>
+
+        {errorMessage && (
+          <p className="error-message">
+            {errorMessage}
+          </p>
+        )}
 
         <button type="submit">
           Start Quiz
