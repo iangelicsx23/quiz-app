@@ -34,7 +34,7 @@ Each task should be completed, tested and committed separately.
 
 ## Phase 4 — Quiz Functionality
 
-- [ ] TASK-12 — Filter questions by category and difficulty
+- [x] TASK-12 — Filter questions by category and difficulty
 - [ ] TASK-13 — Shuffle the selected quiz questions
 - [ ] TASK-14 — Display the current question and answers
 - [ ] TASK-15 — Add answer selection logic

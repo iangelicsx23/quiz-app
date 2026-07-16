@@ -1,8 +1,11 @@
-function QuizScreen({ onFinishQuiz }) {
+function QuizScreen({ questions, onFinishQuiz }) {
   return (
     <section>
       <h2>Quiz</h2>
-      <p>The current question will appear here.</p>
+
+      <p>
+        Matching questions: {questions.length}
+      </p>
 
       <button type="button" onClick={onFinishQuiz}>
         Finish Quiz

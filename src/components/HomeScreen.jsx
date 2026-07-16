@@ -24,7 +24,7 @@ function HomeScreen({ onStartQuiz }) {
           }
 
           setErrorMessage("");
-          onStartQuiz();
+          onStartQuiz(selectedCategory, selectedDifficulty);
         }}
       >
         <div className="form-group">
