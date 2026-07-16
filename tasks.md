@@ -17,7 +17,7 @@ Each task should be completed, tested and committed separately.
 
 ## Phase 2 — Application Structure
 
-- [ ] TASK-05 — Create the main application screens
+- [x] TASK-05 — Create the main application screens
 - [ ] TASK-06 — Add application navigation between screens
 - [ ] TASK-07 — Create the local quiz question data structure
 
