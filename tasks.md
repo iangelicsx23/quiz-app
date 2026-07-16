@@ -19,7 +19,7 @@ Each task should be completed, tested and committed separately.
 
 - [x] TASK-05 — Create the main application screens
 - [x] TASK-06 — Add application navigation between screens
-- [ ] TASK-07 — Create the local quiz question data structure
+- [x] TASK-07 — Create the local quiz question data structure
 
 ---
 
