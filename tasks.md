@@ -26,7 +26,7 @@ Each task should be completed, tested and committed separately.
 ## Phase 3 — Home Screen
 
 - [x] TASK-08 — Build the quiz home screen
-- [ ] TASK-09 — Add category selection
+- [x] TASK-09 — Add category selection
 - [ ] TASK-10 — Add difficulty selection
 - [ ] TASK-11 — Validate quiz settings before starting
 

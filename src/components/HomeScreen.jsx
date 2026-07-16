@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 function HomeScreen({ onStartQuiz }) {
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   return (
     <section className="home-screen">
       <h2>Start a New Quiz</h2>
@@ -17,7 +21,14 @@ function HomeScreen({ onStartQuiz }) {
         <div className="form-group">
           <label htmlFor="category">Category</label>
 
-          <select id="category" name="category">
+          <select
+            id="category"
+            name="category"
+            value={selectedCategory}
+            onChange={(event) => {
+              setSelectedCategory(event.target.value);
+            }}
+          >
             <option value="">Select a category</option>
             <option value="General Knowledge">
               General Knowledge
