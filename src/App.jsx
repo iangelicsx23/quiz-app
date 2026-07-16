@@ -4,6 +4,27 @@ import QuizScreen from "./components/QuizScreen";
 import ResultsScreen from "./components/ResultsScreen";
 import questions from "./data/questions";
 
+function shuffleArray(items) {
+  const shuffledItems = [...items];
+
+  for (
+    let currentIndex = shuffledItems.length - 1;
+    currentIndex > 0;
+    currentIndex--
+  ) {
+    const randomIndex = Math.floor(
+      Math.random() * (currentIndex + 1)
+    );
+
+    [shuffledItems[currentIndex], shuffledItems[randomIndex]] = [
+      shuffledItems[randomIndex],
+      shuffledItems[currentIndex],
+    ];
+  }
+
+  return shuffledItems;
+}
+
 function App() {
   const [currentScreen, setCurrentScreen] = useState("home");
   const [quizQuestions, setQuizQuestions] = useState([]);
@@ -15,8 +36,10 @@ function App() {
         question.difficulty === difficulty
       );
     });
-    
-    setQuizQuestions(filteredQuestions);
+
+    const shuffledQuestions = shuffleArray(filteredQuestions);
+
+    setQuizQuestions(shuffledQuestions);
     setCurrentScreen("quiz");
   }
 
