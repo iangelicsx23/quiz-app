@@ -1,9 +1,10 @@
 import { useState } from "react";
 
 function QuizScreen({ questions, onFinishQuiz }) {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
 
-  const currentQuestion = questions[0];
+  const currentQuestion = questions[currentQuestionIndex];
 
   if (!currentQuestion) {
     return (
@@ -26,6 +27,19 @@ function QuizScreen({ questions, onFinishQuiz }) {
     setSelectedAnswer(answer);
   }
 
+  function handleNextQuestion() {
+    const isLastQuestion =
+      currentQuestionIndex === questions.length - 1;
+
+    if (isLastQuestion) {
+      onFinishQuiz();
+      return;
+    }
+
+    setCurrentQuestionIndex((previousIndex) => previousIndex + 1);
+    setSelectedAnswer("");
+  }
+
   function getAnswerClass(answer) {
     if (!selectedAnswer) {
       return "answer-button";
@@ -45,10 +59,13 @@ function QuizScreen({ questions, onFinishQuiz }) {
   const isCorrect =
     selectedAnswer === currentQuestion.correctAnswer;
 
+  const isLastQuestion =
+    currentQuestionIndex === questions.length - 1;
+
   return (
     <section className="quiz-screen">
       <p>
-        Question 1 of {questions.length}
+        Question {currentQuestionIndex + 1} of {questions.length}
       </p>
 
       <h2>{currentQuestion.question}</h2>
@@ -68,16 +85,18 @@ function QuizScreen({ questions, onFinishQuiz }) {
       </div>
 
       {selectedAnswer && (
-        <p className="answer-feedback">
-          {isCorrect
-            ? "Correct!"
-            : `Incorrect. The correct answer is ${currentQuestion.correctAnswer}.`}
-        </p>
-      )}
+        <>
+          <p className="answer-feedback">
+            {isCorrect
+              ? "Correct!"
+              : `Incorrect. The correct answer is ${currentQuestion.correctAnswer}.`}
+          </p>
 
-      <button type="button" onClick={onFinishQuiz}>
-        Finish Quiz
-      </button>
+          <button type="button" onClick={handleNextQuestion}>
+            {isLastQuestion ? "View Results" : "Next Question"}
+          </button>
+        </>
+      )}
     </section>
   );
 }
