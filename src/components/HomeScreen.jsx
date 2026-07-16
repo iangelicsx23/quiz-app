@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function HomeScreen({ onStartQuiz }) {
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedDifficulty, setSelectedDifficulty] = useState("");
 
   return (
     <section className="home-screen">
@@ -45,7 +46,14 @@ function HomeScreen({ onStartQuiz }) {
         <div className="form-group">
           <label htmlFor="difficulty">Difficulty</label>
 
-          <select id="difficulty" name="difficulty">
+          <select
+            id="difficulty"
+            name="difficulty"
+            value={selectedDifficulty}
+            onChange={(event) => {
+              setSelectedDifficulty(event.target.value);
+            }}
+          >
             <option value="">Select a difficulty</option>
             <option value="Easy">Easy</option>
             <option value="Medium">Medium</option>
