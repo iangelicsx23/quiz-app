@@ -40,7 +40,7 @@ Each task should be completed, tested and committed separately.
 - [x] TASK-15 — Add answer selection logic
 - [x] TASK-16 — Show correct and incorrect answer feedback
 - [x] TASK-17 — Add next-question functionality
-- [ ] TASK-18 — Add quiz progress display
+- [x] TASK-18 — Add quiz progress display
 - [ ] TASK-19 — Calculate the quiz score
 
 ---

@@ -60,15 +60,31 @@ function QuizScreen({ questions, onFinishQuiz }) {
     selectedAnswer === currentQuestion.correctAnswer;
 
   const isLastQuestion =
-    currentQuestionIndex === questions.length - 1;
+  currentQuestionIndex === questions.length - 1;
 
-  return (
-    <section className="quiz-screen">
-      <p>
-        Question {currentQuestionIndex + 1} of {questions.length}
-      </p>
+  const progressPercentage =
+  ((currentQuestionIndex + 1) / questions.length) * 100;
 
-      <h2>{currentQuestion.question}</h2>
+return (
+  <section className="quiz-screen">
+    <div className="quiz-progress">
+      <div className="progress-text">
+        <span>
+          Question {currentQuestionIndex + 1} of {questions.length}
+        </span>
+
+        <span>{Math.round(progressPercentage)}%</span>
+      </div>
+
+      <div className="progress-bar">
+        <div
+          className="progress-fill"
+          style={{ width: `${progressPercentage}%` }}
+        />
+      </div>
+    </div>
+
+    <h2>{currentQuestion.question}</h2>
 
       <div className="answer-list">
         {currentQuestion.answers.map((answer) => (
