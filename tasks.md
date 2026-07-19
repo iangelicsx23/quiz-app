@@ -48,7 +48,7 @@ Each task should be completed, tested and committed separately.
 ## Phase 5 — Results and Storage
 
 - [x] TASK-20 — Build the results screen
-- [ ] TASK-21 — Calculate the final percentage
+- [x] TASK-21 — Calculate the final percentage
 - [ ] TASK-22 — Add result messages based on the score
 - [ ] TASK-23 — Save the best score in LocalStorage
 - [ ] TASK-24 — Display the saved best score
