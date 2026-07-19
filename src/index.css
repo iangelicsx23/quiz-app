@@ -175,3 +175,9 @@ h1 {
   font-size: 1.5rem;
   font-weight: bold;
 }
+
+.results-message {
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
