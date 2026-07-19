@@ -146,3 +146,26 @@ h1 {
   background: #222;
   transition: width 0.3s ease;
 }
+
+.results-screen {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.results-screen h2 {
+  margin-top: 0;
+}
+
+.results-score {
+  margin: 24px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.results-screen button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+}
