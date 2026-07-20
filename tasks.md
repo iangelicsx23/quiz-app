@@ -61,7 +61,7 @@ Each task should be completed, tested and committed separately.
 - [x] TASK-26 — Style the home screen
 - [x] TASK-27 — Style the quiz screen
 - [x] TASK-28 — Style the results screen
-- [ ] TASK-29 — Add responsive mobile design
+- [x] TASK-29 — Add responsive mobile design
 - [ ] TASK-30 — Handle missing or insufficient questions
 - [ ] TASK-31 — Test the complete quiz flow
 - [ ] TASK-32 — Fix final bugs and accessibility issues

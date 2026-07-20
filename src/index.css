@@ -279,3 +279,43 @@ h1 {
   background: #4338ca;
   transform: translateY(-1px);
 }
+
+@media (max-width: 600px) {
+  main {
+    width: min(92%, 650px);
+    padding: 28px 0;
+  }
+
+  h1 {
+    margin-bottom: 22px;
+    font-size: 2rem;
+  }
+
+  .home-screen,
+  .quiz-screen,
+  .results-screen {
+    padding: 24px 20px;
+    border-radius: 14px;
+  }
+
+  .home-screen h2,
+  .quiz-screen h2 {
+    font-size: 1.4rem;
+  }
+
+  .results-screen h2 {
+    font-size: 1.7rem;
+  }
+
+  .results-percentage {
+    font-size: 2rem;
+  }
+
+  .progress-text {
+    font-size: 0.85rem;
+  }
+
+  .answer-button {
+    padding: 13px 14px;
+  }
+}
