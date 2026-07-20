@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HomeScreen from "./components/HomeScreen";
 import QuizScreen from "./components/QuizScreen";
 import ResultsScreen from "./components/ResultsScreen";
@@ -30,6 +30,16 @@ function App() {
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [score, setScore] = useState(0);
 
+  const [bestScore, setBestScore] = useState(() => {
+    const savedBestScore = localStorage.getItem("quizBestScore");
+
+    return savedBestScore ? Number(savedBestScore) : 0;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("quizBestScore", bestScore);
+  }, [bestScore]);
+
   function startQuiz(category, difficulty) {
     const filteredQuestions = questions.filter((question) => {
       return (
@@ -45,6 +55,14 @@ function App() {
     setCurrentScreen("quiz");
   }
 
+  function finishQuiz() {
+    if (score > bestScore) {
+      setBestScore(score);
+    }
+
+    setCurrentScreen("results");
+  }
+
   function renderScreen() {
     if (currentScreen === "quiz") {
       return (
@@ -54,7 +72,7 @@ function App() {
           onCorrectAnswer={() =>
             setScore((previousScore) => previousScore + 1)
           }
-          onFinishQuiz={() => setCurrentScreen("results")}
+          onFinishQuiz={finishQuiz}
         />
       );
     }
@@ -64,6 +82,7 @@ function App() {
         <ResultsScreen
           score={score}
           totalQuestions={quizQuestions.length}
+          bestScore={bestScore}
           onPlayAgain={() => setCurrentScreen("home")}
         />
       );
