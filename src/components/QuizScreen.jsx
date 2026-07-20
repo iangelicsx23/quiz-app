@@ -118,7 +118,7 @@ function QuizScreen({
 
       {selectedAnswer && (
         <>
-          <p className="answer-feedback">
+          <p className="answer-feedback" role="status" aria-live="polite">
             {isCorrect
               ? "Correct!"
               : `Incorrect. The correct answer is ${currentQuestion.correctAnswer}.`}

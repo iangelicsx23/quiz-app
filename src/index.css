@@ -31,6 +31,8 @@ h1 {
   font-size: 2.4rem;
 }
 
+/* Home screen */
+
 .home-screen {
   padding: 36px;
   border: 1px solid #e5e7eb;
@@ -211,6 +213,7 @@ h1 {
   background: #4f46e5;
   color: white;
   font-weight: 700;
+  transition: background 0.2s ease;
 }
 
 .quiz-screen > button:hover {
@@ -279,6 +282,16 @@ h1 {
   background: #4338ca;
   transform: translateY(-1px);
 }
+
+/* Accessibility */
+
+button:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.35);
+  outline-offset: 3px;
+}
+
+/* Mobile design */
 
 @media (max-width: 600px) {
   main {

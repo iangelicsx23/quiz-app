@@ -37,6 +37,7 @@ function HomeScreen({ onStartQuiz }) {
             onChange={(event) => {
               setSelectedCategory(event.target.value);
             }}
+            required
           >
             <option value="">Select a category</option>
             <option value="General Knowledge">
@@ -61,6 +62,7 @@ function HomeScreen({ onStartQuiz }) {
             onChange={(event) => {
               setSelectedDifficulty(event.target.value);
             }}
+            required
           >
             <option value="">Select a difficulty</option>
             <option value="Easy">Easy</option>
@@ -70,7 +72,7 @@ function HomeScreen({ onStartQuiz }) {
         </div>
 
         {errorMessage && (
-          <p className="error-message">
+          <p className="error-message" role="alert">
             {errorMessage}
           </p>
         )}
