@@ -2,7 +2,6 @@ import { useState } from "react";
 
 function QuizScreen({
   questions,
-  score,
   onCorrectAnswer,
   onFinishQuiz,
   onReturnHome,

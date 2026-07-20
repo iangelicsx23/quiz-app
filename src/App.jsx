@@ -80,7 +80,6 @@ function App() {
       return (
         <QuizScreen
           questions={quizQuestions}
-          score={score}
           onCorrectAnswer={() =>
             setScore((previousScore) => previousScore + 1)
           }
