@@ -63,6 +63,12 @@ function App() {
     setCurrentScreen("results");
   }
 
+  function playAgain() {
+    setQuizQuestions([]);
+    setScore(0);
+    setCurrentScreen("home");
+  }
+
   function renderScreen() {
     if (currentScreen === "quiz") {
       return (
@@ -83,7 +89,7 @@ function App() {
           score={score}
           totalQuestions={quizQuestions.length}
           bestScore={bestScore}
-          onPlayAgain={() => setCurrentScreen("home")}
+          onPlayAgain={playAgain}
         />
       );
     }
