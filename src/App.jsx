@@ -48,6 +48,12 @@ function App() {
       );
     });
 
+    if (filteredQuestions.length === 0) {
+      setQuizQuestions([]);
+      setCurrentScreen("quiz");
+      return;
+    }
+
     const shuffledQuestions = shuffleArray(filteredQuestions);
 
     setQuizQuestions(shuffledQuestions);
@@ -79,6 +85,7 @@ function App() {
             setScore((previousScore) => previousScore + 1)
           }
           onFinishQuiz={finishQuiz}
+          onReturnHome={playAgain}
         />
       );
     }

@@ -5,6 +5,7 @@ function QuizScreen({
   score,
   onCorrectAnswer,
   onFinishQuiz,
+  onReturnHome,
 }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
@@ -12,17 +13,20 @@ function QuizScreen({
   const currentQuestion = questions[currentQuestionIndex];
 
   if (!currentQuestion) {
-    return (
-      <section>
-        <h2>Quiz</h2>
-        <p>No questions were found for this selection.</p>
+  return (
+    <section className="quiz-screen">
+      <h2>No Questions Available</h2>
 
-        <button type="button" onClick={onFinishQuiz}>
-          Finish Quiz
-        </button>
-      </section>
-    );
-  }
+      <p>
+        No questions were found for the selected category and difficulty.
+      </p>
+
+      <button type="button" onClick={onReturnHome}>
+        Return Home
+      </button>
+    </section>
+  );
+}
 
   function handleAnswerClick(answer) {
     if (selectedAnswer) {
