@@ -42,4 +42,4 @@ Make sure Node.js and npm are installed.
 Clone the repository:
 
 ```bash
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/iangelicsx23/quiz-app.git
