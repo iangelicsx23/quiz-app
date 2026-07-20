@@ -1,16 +1,45 @@
-# React + Vite
+# Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Quiz App is a responsive React application that allows users to choose a category and difficulty level, answer multiple-choice questions, receive immediate feedback, and view their final result.
 
-Currently, two official plugins are available:
+The application also stores the user's best score using LocalStorage.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Category selection
+- Difficulty selection
+- Form validation
+- Randomized quiz questions
+- Multiple-choice answers
+- Correct and incorrect answer feedback
+- Quiz progress indicator
+- Score calculation
+- Final percentage
+- Result messages based on performance
+- Best score saved in LocalStorage
+- Play Again functionality
+- Responsive mobile design
+- Keyboard and accessibility improvements
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies
 
-## Expanding the ESLint configuration
+- React
+- JavaScript
+- HTML
+- CSS
+- Vite
+- Git
+- GitHub
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Running the Project Locally
+
+### Requirements
+
+Make sure Node.js and npm are installed.
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone YOUR_REPOSITORY_URL

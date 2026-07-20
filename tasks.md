@@ -70,9 +70,9 @@ Each task should be completed, tested and committed separately.
 
 ## Phase 7 — Documentation and Submission
 
-- [ ] TASK-33 — Write the project README
-- [ ] TASK-34 — Add installation and running instructions
-- [ ] TASK-35 — Document the question data and LocalStorage usage
+- [x] TASK-33 — Write the project README
+- [x] TASK-34 — Add installation and running instructions
+- [x] TASK-35 — Document the question data and LocalStorage usage
 - [ ] TASK-36 — Verify the production build
 - [ ] TASK-37 — Review the Git history
 - [ ] TASK-38 — Push the completed project to GitHub
