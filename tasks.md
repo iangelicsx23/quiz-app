@@ -73,6 +73,6 @@ Each task should be completed, tested and committed separately.
 - [x] TASK-33 — Write the project README
 - [x] TASK-34 — Add installation and running instructions
 - [x] TASK-35 — Document the question data and LocalStorage usage
-- [ ] TASK-36 — Verify the production build
+- [x] TASK-36 — Verify the production build
 - [ ] TASK-37 — Review the Git history
 - [ ] TASK-38 — Push the completed project to GitHub
