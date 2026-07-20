@@ -1,6 +1,7 @@
 function ResultsScreen({
   score,
   totalQuestions,
+  bestScore,
   onPlayAgain,
 }) {
   const percentage =
@@ -38,6 +39,10 @@ function ResultsScreen({
 
       <p className="results-message">
         {getResultMessage()}
+      </p>
+
+      <p className="best-score">
+        Best score: {bestScore}
       </p>
 
       <button type="button" onClick={onPlayAgain}>

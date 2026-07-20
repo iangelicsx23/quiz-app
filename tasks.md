@@ -51,7 +51,7 @@ Each task should be completed, tested and committed separately.
 - [x] TASK-21 — Calculate the final percentage
 - [x] TASK-22 — Add result messages based on the score
 - [x] TASK-23 — Save the best score in LocalStorage
-- [ ] TASK-24 — Display the saved best score
+- [x] TASK-24 — Display the saved best score
 - [ ] TASK-25 — Add Play Again functionality
 
 ---
