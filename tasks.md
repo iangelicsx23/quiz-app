@@ -58,7 +58,7 @@ Each task should be completed, tested and committed separately.
 
 ## Phase 6 — Design and Quality
 
-- [ ] TASK-26 — Style the home screen
+- [x] TASK-26 — Style the home screen
 - [ ] TASK-27 — Style the quiz screen
 - [ ] TASK-28 — Style the results screen
 - [ ] TASK-29 — Add responsive mobile design
